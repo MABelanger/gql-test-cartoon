@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import _ from 'lodash';
 
 import { Characters } from './Characters';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
@@ -33,3 +35,7 @@ export function CharacterGrid(props) {
     </div>
   );
 }
+
+CharacterGrid.propTypes = {
+  characters: PropTypes.shape(PropTypes.string).isRequired,
+};

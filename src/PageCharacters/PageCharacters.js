@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   useQuery,
@@ -46,3 +47,7 @@ export default function PageCharacters(props) {
     <CharacterGrid characters={characters} />
   );
 }
+
+PageCharacters.propTypes = {
+  filterName: PropTypes.string.isRequired,
+};
