@@ -8,14 +8,17 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   },
   media: {
     height: 140,
   },
-});
+}));
 
 export function CharacterCard(props) {
   const classes = useStyles();
@@ -47,14 +50,5 @@ export function CharacterCard(props) {
         </Button>
       </CardActions>
     </Card>
-  );
-}
-
-export function Character(props) {
-  return (
-    <div>
-      {props.name}
-      <img src={props.image} />
-    </div>
   );
 }

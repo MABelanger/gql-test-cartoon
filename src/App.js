@@ -1,10 +1,10 @@
 import React from 'react';
-import { Characters } from './Characters';
+import { PageCharacters } from './PageCharacters';
 
 function App() {
   return (
     <div>
-      <Characters filterName="Ka" />
+      <PageCharacters filterName="Ka" />
     </div>
   );
 }
