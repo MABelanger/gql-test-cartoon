@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Input } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from '@material-ui/core/Grid';
 
+import { Input } from '@material-ui/core';
 import {
   useQuery,
   gql,
   useLazyQuery,
 } from '@apollo/client';
 
+import { CenterComponent } from './CenterComponent';
 import { CharactersGrid } from './CharactersGrid';
 
 const GET_ALL_CHARACTERS = gql`
@@ -58,14 +61,27 @@ export function PageCharacters(props) {
   console.log('characters', characters);
 
   function renderCharacters() {
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Not found...</p>;
+    if (loading) return <CenterComponent><CircularProgress /></CenterComponent>;
+    if (error) return <CenterComponent>Not Found...</CenterComponent>;
     return <CharactersGrid characters={characters} />;
   }
 
   return (
     <div>
-      <Input onChange={handleFilterNameChange} value={filterName} />
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+      >
+
+        <Grid item xs={3}>
+          <Input onChange={handleFilterNameChange} value={filterName} placeholder="search characters..." />
+        </Grid>
+
+      </Grid>
+
       {renderCharacters()}
     </div>
   );
