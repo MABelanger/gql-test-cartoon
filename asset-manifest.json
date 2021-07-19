@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/static/js/main.3bdd61e8.chunk.js",
-    "main.js.map": "/static/js/main.3bdd61e8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4511dd1a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4511dd1a.js.map",
-    "static/js/2.4c02f9ec.chunk.js": "/static/js/2.4c02f9ec.chunk.js",
-    "static/js/2.4c02f9ec.chunk.js.map": "/static/js/2.4c02f9ec.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.4c02f9ec.chunk.js.LICENSE.txt": "/static/js/2.4c02f9ec.chunk.js.LICENSE.txt"
+    "main.css": "/gql-test-cartoon/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/gql-test-cartoon/static/js/main.3bdd61e8.chunk.js",
+    "main.js.map": "/gql-test-cartoon/static/js/main.3bdd61e8.chunk.js.map",
+    "runtime-main.js": "/gql-test-cartoon/static/js/runtime-main.e5890fcf.js",
+    "runtime-main.js.map": "/gql-test-cartoon/static/js/runtime-main.e5890fcf.js.map",
+    "static/js/2.4c02f9ec.chunk.js": "/gql-test-cartoon/static/js/2.4c02f9ec.chunk.js",
+    "static/js/2.4c02f9ec.chunk.js.map": "/gql-test-cartoon/static/js/2.4c02f9ec.chunk.js.map",
+    "index.html": "/gql-test-cartoon/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/gql-test-cartoon/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.4c02f9ec.chunk.js.LICENSE.txt": "/gql-test-cartoon/static/js/2.4c02f9ec.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4511dd1a.js",
+    "static/js/runtime-main.e5890fcf.js",
     "static/js/2.4c02f9ec.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.3bdd61e8.chunk.js"
