@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import { PageCharacters } from './PageCharacters';
 
 function App() {
   return (
     <div>
-      <PageCharacters filterName="Ka" />
+      <PageCharacters filterName="filterName" />
     </div>
   );
 }

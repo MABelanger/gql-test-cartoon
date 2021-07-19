@@ -1,12 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { Input } from '@material-ui/core';
 
 import {
   useQuery,
   gql,
+  useLazyQuery,
 } from '@apollo/client';
 
-import { CharacterGrid } from './CharacterGrid';
+import { CharactersGrid } from './CharactersGrid';
 
 const GET_ALL_CHARACTERS = gql`
   query AllCharacters($page: Int, $filter: FilterCharacter) {
@@ -25,29 +26,47 @@ const GET_ALL_CHARACTERS = gql`
   }
 `;
 
-export default function PageCharacters(props) {
-  const { loading, error, data } = useQuery(GET_ALL_CHARACTERS, { variables: { filter: { name: props.filterName } } });
+export function PageCharacters(props) {
+  const [filterName, setFilterName] = useState('');
+  const [characters, setCharacters] = useState([]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) {
-    console.log('error', error);
-    return (
-      <p>
-        Error :
-        {error}
-      </p>
-    );
+  const [
+    loadCharacters,
+    {
+      called, loading, data, error,
+    },
+  ] = useLazyQuery(GET_ALL_CHARACTERS, {
+    variables: { filter: { name: filterName } },
+  });
+
+  useEffect(() => {
+    loadCharacters();
+  }, [filterName]);
+
+  useEffect(() => {
+    if (data && data.characters && data.characters.results.length > 0) {
+      const characters = data.characters.results;
+      setCharacters(characters);
+    }
+  }, [data]);
+
+  function handleFilterNameChange(e) {
+    const { value } = e.target;
+    setFilterName(value);
   }
-
-  const characters = data.characters.results;
 
   console.log('characters', characters);
 
+  function renderCharacters() {
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Not found...</p>;
+    return <CharactersGrid characters={characters} />;
+  }
+
   return (
-    <CharacterGrid characters={characters} />
+    <div>
+      <Input onChange={handleFilterNameChange} value={filterName} />
+      {renderCharacters()}
+    </div>
   );
 }
-
-PageCharacters.propTypes = {
-  filterName: PropTypes.string.isRequired,
-};

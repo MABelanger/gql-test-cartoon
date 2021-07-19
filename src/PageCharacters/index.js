@@ -1,3 +1,3 @@
-import PageCharacters from './PageCharacters';
+import { PageCharacters } from './PageCharacters';
 
 export { PageCharacters };
