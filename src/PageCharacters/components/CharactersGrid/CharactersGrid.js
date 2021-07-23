@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import _ from 'lodash';
 
+import { CenterContainer } from '../CenterContainer';
 import { Characters } from './Characters';
 
 const useStyles = makeStyles(() => ({
@@ -14,6 +16,9 @@ const useStyles = makeStyles(() => ({
 
 export function CharactersGrid(props) {
   const classes = useStyles();
+
+  if (props.isLoading) return <CenterContainer><CircularProgress /></CenterContainer>;
+  if (props.hasError) return <CenterContainer>Not Found...</CenterContainer>;
 
   const charactersChunks = _.chunk(props.characters, 3);
 
@@ -36,4 +41,11 @@ export function CharactersGrid(props) {
 
 CharactersGrid.propTypes = {
   characters: PropTypes.shape(PropTypes.string).isRequired,
+  isLoading: PropTypes.bool,
+  hasError: PropTypes.bool,
+};
+
+CharactersGrid.defaultProps = {
+  isLoading: false,
+  hasError: false,
 };

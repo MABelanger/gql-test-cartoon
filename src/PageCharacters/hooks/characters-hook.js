@@ -46,7 +46,9 @@ export function useCharacters() {
     }
   }, [data]);
 
+  const hasError = !!error;
+
   return {
-    characters, filterName, setFilterName, loading, error,
+    characters, filterName, setFilterName, isLoading: loading, hasError,
   };
 }

@@ -1,15 +1,12 @@
 import React from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Grid from '@material-ui/core/Grid';
-import { Input } from '@material-ui/core';
 
 import { useCharacters } from './hooks/characters-hook';
-import { CenterComponent } from './CenterComponent';
-import { CharactersGrid } from './CharactersGrid';
+import { CharactersGrid } from './components/CharactersGrid';
+import { HeaderGrid } from './components/HeaderGrid';
 
 export function PageCharacters(props) {
   const {
-    characters, filterName, setFilterName, loading, error,
+    characters, filterName, setFilterName, isLoading, hasError,
   } = useCharacters();
 
   function handleFilterNameChange(e) {
@@ -17,26 +14,17 @@ export function PageCharacters(props) {
     setFilterName(value);
   }
 
-  function renderCharacters() {
-    if (loading) return <CenterComponent><CircularProgress /></CenterComponent>;
-    if (error) return <CenterComponent>Not Found...</CenterComponent>;
-    return <CharactersGrid characters={characters} />;
-  }
-
   return (
     <div>
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-      >
-        <Grid item xs={3}>
-          <Input onChange={handleFilterNameChange} value={filterName} placeholder="search characters..." />
-        </Grid>
-        {renderCharacters()}
-      </Grid>
+      <HeaderGrid
+        onChange={handleFilterNameChange}
+        filterName={filterName}
+      />
+      <CharactersGrid
+        characters={characters}
+        isLoading={isLoading}
+        hasError={hasError}
+      />
     </div>
   );
 }
