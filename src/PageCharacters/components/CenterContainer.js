@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
 export function CenterContainer(props) {
@@ -19,3 +20,10 @@ export function CenterContainer(props) {
     </Grid>
   );
 }
+
+CenterContainer.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};

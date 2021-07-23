@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
+
 import { Input } from '@material-ui/core';
 
 export function HeaderGrid(props) {
@@ -21,3 +23,8 @@ export function HeaderGrid(props) {
     </Grid>
   );
 }
+
+HeaderGrid.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  filterName: PropTypes.string.isRequired,
+};
