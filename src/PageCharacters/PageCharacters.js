@@ -75,14 +75,11 @@ export function PageCharacters(props) {
         alignItems="center"
         justify="center"
       >
-
         <Grid item xs={3}>
           <Input onChange={handleFilterNameChange} value={filterName} placeholder="search characters..." />
         </Grid>
-
+        {renderCharacters()}
       </Grid>
-
-      {renderCharacters()}
     </div>
   );
 }
