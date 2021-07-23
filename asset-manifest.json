@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/gql-test-cartoon/static/js/main.30917037.chunk.js",
-    "main.js.map": "/gql-test-cartoon/static/js/main.30917037.chunk.js.map",
+    "main.js": "/gql-test-cartoon/static/js/main.0a7fa0d7.chunk.js",
+    "main.js.map": "/gql-test-cartoon/static/js/main.0a7fa0d7.chunk.js.map",
     "runtime-main.js": "/gql-test-cartoon/static/js/runtime-main.e5890fcf.js",
     "runtime-main.js.map": "/gql-test-cartoon/static/js/runtime-main.e5890fcf.js.map",
     "static/js/2.452db6c1.chunk.js": "/gql-test-cartoon/static/js/2.452db6c1.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.e5890fcf.js",
     "static/js/2.452db6c1.chunk.js",
-    "static/js/main.30917037.chunk.js"
+    "static/js/main.0a7fa0d7.chunk.js"
   ]
 }
