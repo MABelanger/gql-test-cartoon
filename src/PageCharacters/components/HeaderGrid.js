@@ -12,7 +12,11 @@ export function HeaderGrid(props) {
       justify="center"
     >
       <Grid item xs={3}>
-        <Input onChange={props.onChange} value={props.filterName} placeholder="search characters..." />
+        <Input
+          onChange={props.onChange}
+          value={props.filterName}
+          placeholder="search characters..."
+        />
       </Grid>
     </Grid>
   );
