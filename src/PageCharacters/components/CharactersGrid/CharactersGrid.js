@@ -17,8 +17,21 @@ const useStyles = makeStyles(() => ({
 export function CharactersGrid(props) {
   const classes = useStyles();
 
-  if (props.isLoading) return <CenterContainer><CircularProgress /></CenterContainer>;
-  if (props.hasError) return <CenterContainer>Not Found...</CenterContainer>;
+  if (props.isLoading) {
+    return (
+      <CenterContainer>
+        <CircularProgress />
+      </CenterContainer>
+    );
+  }
+
+  if (props.hasError) {
+    return (
+      <CenterContainer>
+        Not Found...
+      </CenterContainer>
+    );
+  }
 
   const charactersChunks = _.chunk(props.characters, 3);
 
